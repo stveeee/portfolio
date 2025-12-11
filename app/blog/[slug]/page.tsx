@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getRepos } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts()
+  let posts = getRepos()
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -35,7 +35,7 @@ export function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/repos/${post.slug}`,
       images: [
         {
           url: ogImage,

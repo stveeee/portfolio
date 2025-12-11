@@ -7,11 +7,8 @@ export default function Page() {
         Steve Johnston
       </h1>
       <p className="mb-4">
-        {`This is a portfolio showcasing my latest projects.`}
+        {`This is a portfolio showcasing my latest projects. You can view my list of public repositories by navigating to the Repos page.`}
       </p>
-      <div className="my-8">
-        <Repos />
-      </div>
     </section>
   )
 }
