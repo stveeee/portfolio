@@ -1,4 +1,4 @@
-import { BlogPosts } from 'app/components/posts'
+import { Repos } from 'app/components/posts'
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
         {`This is a portfolio showcasing my latest projects.`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        <Repos />
       </div>
     </section>
   )
