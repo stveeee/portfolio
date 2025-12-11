@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getRepos } from 'app/blog/utils'
+import { getRepos } from 'app/repos/utils'
 
 export default async function Page() {
   const repos = await getRepos()

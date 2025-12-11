@@ -1,11 +1,4 @@
 
-type Metadata = {
-  title: string
-  publishedAt: string
-  summary: string
-  image?: string
-}
-
 export async function getRepos() {
   const data = await fetch('https://api.github.com/users/stveeee/repos?page=1')
   const posts = await data.json()
