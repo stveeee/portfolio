@@ -25,8 +25,8 @@ jobs:
           corepack prepare pnpm@latest --activate
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build (Next) and static export
-        run: pnpm build && pnpm export
+      - name: Build (Next)
+        run: pnpm build
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -38,10 +38,11 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          # We're producing a static export using `next export` which writes
-          # files to the `out` directory. Set `output_location` accordingly
-          # and skip the action's internal build so the step above handles it.
-          output_location: "out" # Built app content directory - optional
+          # Uploading Next's build output directory so the Static Web Apps
+          # action can deploy it. We run `pnpm build` above and then upload
+          # the `.next` folder produced by Next. If you prefer a static
+          # export, we would run `next export` and set `output_location: out`.
+          output_location: ".next" # Built app content directory - optional
           skip_app_build: true
           ###### End of Repository/Build Configurations ######
 
