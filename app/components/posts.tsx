@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { formatDate, getRepos } from 'app/blog/utils'
+import { formatDate, getRepos } from 'app/repos/utils'
 
 export async function Repos() {
   let allRepos = await getRepos()

@@ -1,4 +1,4 @@
-import { getRepos } from 'app/blog/utils'
+import { getRepos } from 'app/repos/utils'
 
 export const baseUrl = 'https://steve-portfolio'
 
