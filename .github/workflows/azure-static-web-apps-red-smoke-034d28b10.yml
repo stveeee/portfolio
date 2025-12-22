@@ -33,6 +33,12 @@ jobs:
           ls -la
           echo 'Size of repo root:'
           du -sh . || true
+        - name: 'Debug: list built files'
+        - run: |
+          echo 'Listing repository root (app_location: "/"):' 
+          ls -la
+          echo 'Size of repo root:'
+          du -sh . || true
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
