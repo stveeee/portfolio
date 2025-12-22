@@ -19,14 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Setup pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Build and export (static)
-        run: pnpm build && pnpm export
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -38,15 +30,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          # Next.js writes build output to the `.next` folder by default.
-          # If your workflow pre-builds the app (runs `pnpm build` / `npm run build`)
-          # you can upload `.next` as the artifact. If you instead perform a
-          # static export (`next export`) change this to `out`.
-          # We produce a static export with `next export` which writes files
-          # to the `out` directory. Upload that folder and skip the action
-          # internal build since we pre-built above.
-          output_location: "out" # Built app content directory - optional
-          skip_app_build: true
+          output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
