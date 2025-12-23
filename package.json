@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node .next/standalone/server.js"
+    "start": "next start"
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.0.0-alpha.13",
@@ -23,6 +23,6 @@
     "typescript": "5.3.3"
   },
   "engines": {
-  "node": "18.x"
+  "node": "22.x"
   }
 }
